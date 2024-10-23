@@ -180,11 +180,13 @@ fn comp_cell(
             attrs=@respo_node.respo_attrs(inner_text=comment),
             [],
           ),
-          @respo_node.span(
+          @respo_node.create_element(
+            "a",
             attrs=@respo_node.respo_attrs(
               inner_text=name,
               class_name=@respo.ui_font_code,
-            ),
+              href="https://webgpu.art/fungi/?rule=\{name}",
+            )..set("target", "_blank"),
             style=@respo_node.RespoStyle::new().insert(
               "word-break", "break-all",
             ),
