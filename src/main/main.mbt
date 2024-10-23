@@ -31,7 +31,7 @@ fn App::view(
   @respo_node.div(
     attrs=@respo_node.respo_attrs(class_name=@respo.ui_global),
     style=@respo_node.RespoStyle::new(padding=Px(12)),
-    [comp_counter(states.pick("counter"), store.counted)],
+    [comp_container(states.pick("container"))],
   )
 }
 
