@@ -6,21 +6,14 @@ fn comp_container(
   @respo_node.div(
     [
       @respo_node.div(
+        class_name=@respo.ui_font_fancy,
         style=@respo_node.RespoStyle::new(
           font_size=32,
           text_align=Center,
           margin_top=40,
           margin_bottom=80,
         ),
-        attrs=@respo_node.respo_attrs(class_name=@respo.ui_font_fancy),
-        [
-          @respo_node.span(
-            attrs=@respo_node.respo_attrs(
-              inner_text="Collection of some Fungi rules",
-            ),
-            [],
-          ),
-        ],
+        [@respo_node.span(inner_text="Collection of some Fungi rules", [])],
       ),
       comp_intro(),
       @respo_node.div(
@@ -421,71 +414,47 @@ fn comp_cell(
   rule : String
 ) -> @respo_node.RespoNode[ActionOp] {
   @respo_node.div(
-    attrs=@respo_node.respo_attrs(class_name=@respo.ui_row),
-    style=@respo_node.RespoStyle::new(
-      margin_bottom=80.0,
-      width=Percent(80),
-      max_width=Px(1200),
-      margin=Auto,
-    ).insert("gap", "20px"),
+    class_name=@respo_node.str_spaced([@respo.ui_row, style_cell]),
     [
       @respo_node.div(
         style=@respo_node.RespoStyle::new(width=Percent(20)),
-        attrs=@respo_node.respo_attrs(class_name=@respo.ui_center),
+        class_name=@respo.ui_center,
         [
           @respo_node.span(
-            attrs=@respo_node.respo_attrs(
-              inner_text=rule,
-              class_name=@respo.ui_font_code,
-            ),
-            style=@respo_node.RespoStyle::new(
-              font_size=12,
-              word_break="break-all",
-            ),
+            inner_text=rule,
+            class_name=@respo.ui_font_code,
+            style=@respo_node.RespoStyle::new(font_size=12, word_break=BreakAll),
             [],
           ),
           @respo_node.div(
-            attrs=@respo_node.respo_attrs(class_name=@respo.ui_row),
-            style=@respo_node.RespoStyle::new(margin_top=10).insert(
-              "gap", "10px",
-            ),
+            class_name=@respo.ui_row,
+            style=@respo_node.RespoStyle::new(margin_top=10, gap=Px(10)),
             [
-              @respo_node.create_element(
-                "a",
-                attrs=@respo_node.respo_attrs(
-                  inner_text="Open",
-                  class_name=@respo.ui_font_code,
-                  href="https://webgpu.art/fungi/?rule=\{rule}",
-                )..set("target", "_blank"),
-                style=@respo_node.RespoStyle::new().insert(
-                  "word-break", "break-all",
-                ),
-                [],
+              @respo_node.a(
+                inner_text="Open",
+                class_name=@respo.ui_font_code,
+                href="https://webgpu.art/fungi/?rule=\{rule}",
+                target=Blank,
+                style=@respo_node.RespoStyle::new(word_break=BreakAll),
               ),
-              @respo_node.create_element(
-                "a",
-                attrs=@respo_node.respo_attrs(
-                  inner_text="Edit",
-                  class_name=@respo.ui_font_code,
-                  href="https://r.tiye.me/Memkits/life-patterns/?rule=\{rule}",
-                )..set("target", "_blank"),
-                style=@respo_node.RespoStyle::new().insert(
-                  "word-break", "break-all",
-                ),
-                [],
+              @respo_node.a(
+                inner_text="Edit",
+                class_name=@respo.ui_font_code,
+                href="https://r.tiye.me/Memkits/life-patterns/?rule=\{rule}",
+                target=Blank,
+                style=@respo_node.RespoStyle::new(word_break=BreakAll),
               ),
             ],
           ),
         ],
       ),
-      @respo_node.create_element(
-        "iframe",
-        attrs=@respo_node.respo_attrs(width="100%", height="400px")
-          ..set("src", "https://webgpu.art/fungi/?rule=\{rule}&grid=2&slow=10")
-          ..set("frameBorder", "0")
-          ..set("loading", "lazy"),
+      @respo_node.iframe(
+        src="https://webgpu.art/fungi/?rule=\{rule}&grid=2&slow=10",
+        loading=Lazy,
+        attrs=@respo_node.respo_attrs(width="100%", height="400px")..set(
+          "frameBorder", "0",
+        ),
         style=@respo_node.RespoStyle::new(border_width=0.0),
-        [@respo_node.span(attrs=@respo_node.respo_attrs(inner_text=rule), [])],
       ),
     ],
   )
@@ -500,13 +469,26 @@ let intro : String =
 
 fn comp_intro() -> @respo_node.RespoNode[ActionOp] {
   @respo_node.div(
-    attrs=@respo_node.respo_attrs(),
     style=@respo_node.RespoStyle::new(
       margin_bottom=80.0,
       width=Px(800),
       margin=Auto,
       line_height=Em(1.6),
     ).insert("gap", "20px"),
-    [@respo_node.span(attrs=@respo_node.respo_attrs(inner_text=intro), [])],
+    [@respo_node.span(inner_text=intro, [])],
   )
 }
+
+let style_cell : String = @respo_node.declare_static_style(
+  [
+    (
+      "&",
+      @respo_node.RespoStyle::new(
+        margin_bottom=80.0,
+        width=Percent(80),
+        max_width=Px(1200),
+        margin=Auto,
+      ).insert("gap", "20px"),
+    ),
+  ],
+)
