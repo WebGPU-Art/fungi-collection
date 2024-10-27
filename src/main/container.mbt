@@ -549,7 +549,7 @@ fn comp_cell(
               @respo_node.a(
                 inner_text="Open",
                 class_name=@respo.ui_font_code,
-                href="https://webgpu.art/fungi/?rule=\{rule}\{get_params_str()}",
+                href="https://webgpu.art/fungi/?rule=\{rule}",
                 target=Blank,
                 style=@respo_node.RespoStyle::new(word_break=BreakAll),
               ),
