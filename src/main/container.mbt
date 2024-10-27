@@ -10,8 +10,8 @@ fn comp_container(
         style=@respo_node.RespoStyle::new(
           font_size=32,
           text_align=Center,
-          margin_top=40,
-          margin_bottom=80,
+          margin_top=Px(40),
+          margin_bottom=Px(80),
         ),
         [@respo_node.span(inner_text="Collection of some Fungi rules", [])],
       ),
@@ -544,12 +544,12 @@ fn comp_cell(
           ),
           @respo_node.div(
             class_name=@respo.ui_row,
-            style=@respo_node.RespoStyle::new(margin_top=10, gap=Px(10)),
+            style=@respo_node.RespoStyle::new(margin_top=Px(10), gap=Px(10)),
             [
               @respo_node.a(
                 inner_text="Open",
                 class_name=@respo.ui_font_code,
-                href="https://webgpu.art/fungi/?rule=\{rule}",
+                href="https://webgpu.art/fungi/?rule=\{rule}\{get_params_str()}",
                 target=Blank,
                 style=@respo_node.RespoStyle::new(word_break=BreakAll),
               ),
@@ -565,12 +565,12 @@ fn comp_cell(
         ],
       ),
       @respo_node.iframe(
-        src="https://webgpu.art/fungi/?rule=\{rule}&grid=2&slow=10",
+        src="https://webgpu.art/fungi/?rule=\{rule}\{get_params_str()}",
         loading=Lazy,
         attrs=@respo_node.respo_attrs(width="100%", height="400px")..set(
           "frameBorder", "0",
         ),
-        style=@respo_node.RespoStyle::new(border_width=0.0),
+        style=@respo_node.RespoStyle::new(border_width=Px(0)),
       ),
     ],
   )
@@ -586,7 +586,7 @@ let intro : String =
 fn comp_intro() -> @respo_node.RespoNode[ActionOp] {
   @respo_node.div(
     style=@respo_node.RespoStyle::new(
-      margin_bottom=80.0,
+      margin_bottom=Px(80),
       width=Px(800),
       margin=Auto,
       line_height=Em(1.6),
@@ -600,7 +600,7 @@ let style_cell : String = @respo_node.declare_static_style(
     (
       "&",
       @respo_node.RespoStyle::new(
-        margin_bottom=80.0,
+        margin_bottom=Px(80),
         width=Percent(80),
         max_width=Px(1200),
         margin=Auto,
@@ -608,3 +608,31 @@ let style_cell : String = @respo_node.declare_static_style(
     ),
   ],
 )
+
+// defaults to &grid=2&slow=10
+fn get_params_str() -> String {
+  let window = @dom_ffi.window()
+  let params = @dom_ffi.get_url_search_params(
+    window.get_location().get_search(),
+  )
+  let grid_param = if params.has("grid") {
+    Some(params.get("grid"))
+  } else {
+    None
+  }
+  let slow_param = if params.has("slow") {
+    Some(params.get("slow"))
+  } else {
+    None
+  }
+  let mut s = ""
+  match grid_param {
+    Some(s1) => s = s + "&grid=" + s1
+    None => s = s + "&grid=2"
+  }
+  match slow_param {
+    Some(s1) => s = s + "&slow=" + s1
+    None => s = s + "&slow=10"
+  }
+  s
+}
