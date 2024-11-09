@@ -6,152 +6,618 @@ fn comp_container(
   @respo_node.div(
     [
       @respo_node.div(
+        class_name=@respo.ui_font_fancy,
         style=@respo_node.RespoStyle::new(
           font_size=32,
           text_align=Center,
-          margin_top=40,
-          margin_bottom=80,
+          margin_top=Px(40),
+          margin_bottom=Px(80),
         ),
-        attrs=@respo_node.respo_attrs(class_name=@respo.ui_font_fancy),
-        [
-          @respo_node.span(
-            attrs=@respo_node.respo_attrs(
-              inner_text="Collection of some Fungi rules",
-            ),
-            [],
-          ),
-        ],
+        [@respo_node.span(inner_text="Collection of some Fungi rules", [])],
       ),
+      comp_intro(),
       @respo_node.div(
         [
-          // comp_cell(
-          //   "TODO", "04594470b0ca4c8210ca000021100102830000140200830000228198000a101400000406c00001624080000804010a5460219e340001b09010300042200302b1",
-          // ),
           comp_cell(
-            "TODO", "3fffffff7b717aad7f6ebbef77fdfdd7fdeefad567af97ef3f75fddb7fff1d6fabfcbecff7977fff3fefd3d3e16f7bb797affff9bd37ed65f4b9fcfbfbbfdbaf",
+            None,
+            "fcfeffabe5def75efdffffeeff37efedfbffeffefebf3fd8fded83eff76b3bfff77fbffbbdb6dbfd7fb67fdf77ffffddbfaf1adef7fffaddf7dbdfcfc95bfdf7",
           ),
           comp_cell(
-            "TODO", "5fff7d75eca67fff7bdff3a3fff7defe7fcdbf4fdeefdddcbf77ff67b2ffefdffc59fdfffbfeefcd9deaf7bf9dbfdf73bfcbbbf6fdec7a7dffe9fe7ffeffef2f",
+            None,
+            "ff6ddffdffbfbffeff3fbafdcf5dffcefeff9fffffff76efff2ffadf3f7daaf77efb7fcfbf3ffbca6f7afbfbf7bcfedff9fe6bcefff7ffefedbf7fffdfeeaf7f",
           ),
           comp_cell(
-            "TODO", "6dfefbff5ebfbeffed979ffb7df6ffb91fb39b97d9d7ffdfd7fbdbadd7dbf2ffbffa9fafdcfdf9eff3f6d5ef9efa1f77dd7cb79fffb577afdfffff7ffffee7ff",
+            None,
+            "efffffeaab4dfefe4bf6b7cb5fdfd5ffadfd7f6bfb69f7fdfffcfdfdf7f7fef9f77ed7ebf77ffb6fbefbbffeffd7bfffbefedf2c9f7f7b595db5fed9ddfe9fdf",
           ),
           comp_cell(
-            "TODO", "6fbfffffdaffeadffffffb57fffffecffbedbebfffdcf6eb5fffc9bfffef9ff9ff7dffcf95f9bfb5dfdf6ffeae67efdffffff5f7ffddbed9fddf3abfe77ebfdf",
+            None,
+            "d77fddff9f7bbffbf7f7ffbebffffb09dff7d97ffa7d7f5ffdfd6fd6fbf7c5cffcdfffef37f2ffbb5ff7f7fefbf967adfcb6f7f7fbff7fe7fff63f2fffff7e5f",
           ),
           comp_cell(
-            "TODO", "7bf7b6f7f55f9eefefbfdefbff7ecb576fafd77f7f6dfffdfdaffffeeb37fd1f9cdbbe9fbb7ff579e7d73fefbf76dbf7eff5b7f5f37febffbfff789ebfffbfef",
+            None,
+            "daf76ffff5f3db77bff7f37e78ffdf9ffffaef672637bf5dfd2ef3b6d7ffe7f7baf7faffeaeaef3e7dffdbaf79fbdfbbedbfdb7ebfe7feffdff7bfda7dbffdbf",
           ),
           comp_cell(
-            "TODO", "7fff7f4fe3feffd6dff76fee1fefbebfcfebfdfdf9feffe3feff67df39deffaffff7bf6dd7ed7f31bfff7feff3dfffffde75b3fffffde37e7c77efddf7defbff",
+            None,
+            "ffbfffeee8ffff7fd9fafbdcfaa5effbbffffeffef55bfffbfddbdbb7ffbff7bbfe667bfcaffbfbffe657bf93f73afeadfb76f7b7ff7ffd753cf9effbffecfb7",
           ),
           comp_cell(
-            "TODO", "7ffff777fbeffd7ef7f63deffbff25ffb9f7fde7f7fb1d77d5fccffcdfd2dbffffffde9fefffdf5f3bbbffcff1edfdeefebe3ebbbd9fff3fdfbfffafb3fd5d5f",
+            None,
+            "fdfbffcbf7e7f7ffbe9bb7ffef9efddffeea7ff3bd77ff79ffebbbafeefdeaff5f3fddbaefcefe77bb99dffdaffff9fffdebfffffe775ffdfffadffbffffeded",
           ),
           comp_cell(
-            "TODO", "9df99dff6ef7f4f7fffffffbc1ffed5fff67f36feffefaeffff7ddabcfe7ffbefbf73ffbfef6dd7fffeffbef6ef5aafdafdf7f375e9bfffff9f3fbfcdfbfebff",
+            None,
+            "ff9b9fedabf2bedfdfd6f5fb2ebf56f6febfeff4febffffa5effffbb7ee7ed77f9fefb6eab93ffdfdffffffbffe533fefd4654ee4f0fff7ff7ef7fb7dcafdf7f",
           ),
           comp_cell(
-            "TODO", "9ff7fd7563ffeeffae2797d7fffaff779eeffaadfe7ffff5aff7f7f7efdbffffff7ef7dfd5783f7b7ffffb2f7ff73e83ffffe7ffdff1fff7c9bb77bffffe7b7f",
+            None,
+            "fbfbfebeff0ffebfdfdfdd77bfff3ffb5df7bfff5bf7ffffeffbffe9f73ffd1367fbffdfdceffffbc7fdfbfeff3fdfb7fffdbebfdfedc7feedfff7fbfefdfbfe",
           ),
           comp_cell(
-            "TODO", "bbf6ef6defabbfdfffbfcfbffd5fffffd78fff7effffd5df6fff767f3fffffc79bfdffcf7ee77fc7eff7b7fad3f9bdfdffc83eeffd7f9be7ffcff7ff7ffc7f3f",
+            None,
+            "d9fc3f7f56fe277f39efd3ef5f7ffbfeff7ff3de6f7ddffdf5b3f7eead7f7fffad97abaff7f7bdd6fb757fd7ff85ff3f3efff973f7df6bffbffedfccfaffffef",
           ),
           comp_cell(
-            "TODO", "bfb77ebefbb9fbbbb9fdf9dffd13f6bffa77ef377ee7f9f3fbffcf7dd3d9fddfde7fdf7bfeeaf72efffbeed9dbbfbffffbfdf5ffffdf7ffbf7f7e719fff7edcf",
+            None,
+            "f76ffdffffc76ee97caebe75efdff6ae5edcaf2bfff7d7f4ffdfefefbfffddff7bb5fefff5fefffeeefeffdffffcfdafd9bfdf1fd7f4dffffdfefdedcfdf7ffd",
           ),
           comp_cell(
-            "TODO", "bfffeefbbff7f3d77dbef17e7e3bd5fdff7bb5b37bf7edd5afbfc7dfffaf3f7bfd5fdfbfcffb6fffcf7fffcd5fff37ffffbfe7db7be9bdbf3f7ffd3ff9ee735d",
+            None,
+            "fbebdfffddb6fff7fff77f5fffbefbffb7afbffeffdefb5ff4f777d7ffdbffbffdfbf7bbbff3f9efddff6f7efffedaffefefffedafd7fff5ffb375fcbbbf1fbe",
           ),
           comp_cell(
-            "TODO", "fdf7a7cff9dfbeff1f7f79f76eee5f6fdff1dffb7fbbcfcf6ffebaf67077afbbfafd7f7f3dffffd7dfbfbe5f749fefffdebbafffdff63fdb7fffdfdffffc5fb3",
+            None,
+            "bcff5bf7ffcbfbdfedfe5ebf52ebfeedfd1dfb6ff7b2f7cff3bffffdeffffefabd3fdeafdd77de4fffffa73fdffd5ffd7fe27ae8ff5cd7797ffffffff7deffff",
           ),
           comp_cell(
-            "TODO", "fedfdf957dffef5ffff5dffffdff9eff9ff7b7fb5edbafffbfffd66df5f5fef73fadf67bff765bfdbf8f7feffcfff1ffefff5afff767bdff77dff7fd726aede7",
+            None,
+            "fffbbfaeff3fffbff4fbcfec7deffdbff3bff37d6fefbd97ffb1fbfffeddffff2fffb3f9dfb9fd5fffdfe7bfedfffafbfdbfbfff5ffb9f74f1db6ab7fffbfbf3",
           ),
           comp_cell(
-            "TODO", "fefbfeffefdd5dffbcf7efceff6effcff65edfb3ffefffdff5fdffb77ffaaf8ffdfaf64bfffbffbfff5df7ffdfeefbdffdfffffbfdfbeffffff7fe7f7bfffbf8",
+            None,
+            "9ed8f7ffffffff4b5bbfffabcc7dffe8fceffdfefbfff92deff3f7f2dbfff7ff6b6fcd7fffd277bfff777fffdfefb4eff9fef626fcfdfeffefd5be446ebfdb7f",
           ),
           comp_cell(
-            "TODO", "ffabffedd93fd7ff3febf7d7fdbadffeb8febfcfefebfde7ff3ffffaeffbd57e7a89b6fffff2fffff7f7ffc9febeebdd76bbdffdff7ff7ed7fe9ffffbfbfffef",
+            None,
+            "d9ffdffa9faffefffef8f7ff4a3e1fff7ffbebff7d376dfffaefcf77dfedfff797d7fff5f3ef47fffdfeedf7fbb5ddbeb7ebbf7fce95bf9f7ea7a7bfff9f3ebf",
           ),
           comp_cell(
-            "TODO", "ffafb55e7bffee5ffb7bb357fdf7ff8bdff7a7fc9957fee7ecff7efdddefbff776baff2fdfdd7fffbfef7cbfff7fb5a177263f7fdb57ad39fffcfefffd6effff",
+            None,
+            "73db6bfaddbd38ffeb79fafbffffeeffa51efffdffdfb3ff39effedfdfbfaafff6ffffbfffdfefffa679fffdcfcf7dff6efffdbfbd2fe7b7ffffb3fbfffefbf3",
           ),
           comp_cell(
-            "TODO", "ffbdfddfed6dfffdf3f95ffde6efcf7bdffffcf7f9bfefdbf74bfbefff73ffc5fff6bffff7fdfb3fbe3b7ff3fffffefffbdf3f7fffeffbbcffaefdcb7caeff77",
+            None,
+            "ffcdf5ffff1ab7d36feffb9fedfdf4ddeffbfbbbbff3fdfff7f3fbff5ffbfb6c7a6afd7cf8efffdfbb7379ffedf7ffbbfeeffefffcfaf4fff27b6dfd65efff5f",
           ),
           comp_cell(
-            "TODO", "fffffffbfed7ffffdfb7ffffef4ff6fdfefc7fbefee2d77defb77ef76efffeefef7d9fecef3ffef777cb2fbdf7f6ff7fe7ce7baddff7affff7ffdfa7aff358fa",
+            None,
+            "ddd5615fdffbf5df7feff759eb7fd7eff76fffe7ff8b6f6f736dddf3a3ef7bfffff5baff76dee7f5fffbfbf7bfc6f6fff7fffdf7be7f33bfeff77ebf7f6e67fb",
           ),
           comp_cell(
-            "TODO", "effdfaffe5bffbfaedf7ff3fdefdba5dc7e33ef7f7f8cf1dbffff7d1e9fefcdf9f5ffbffddd2bfaffeefdf7efffefed77fbddbfffbecbeffbbf87e3dea6f3dfb",
+            None,
+            "dffd77a7bd67f672f73fff7fbfdfedefdf6ec5ffddceffe7fd3f7dfdefdfff7f8d7fbff677fff3fecdfff7fa54ffeffbbfeeffffeff3fffe2d2f7fffbdedf97f",
           ),
           comp_cell(
-            "TODO", "7dffff72ffdff7fbfeefffd7f5bfc37a7f5fef7f1dddfe7d6ff7bbb76ffff7f6bfffbef5c6f8ffe6fefddd91df9beffb5ffffeedfffbffe6b9dfaf7ff66fb5ff",
+            None,
+            "fddf75ef77bf7f76bf7ffdfdff54ffafeffefdeff9ed678ac7fd7f3fb5afffeff7fafbffbb7fdfdedfd3fa657fff6f7f7ffbeebf7fe7dffdffffe9ffddbf9d9f",
           ),
           comp_cell(
-            "TODO", "2df76bdfa7ffe7bffdf7bf7fffffb7fbffb7affdffffdfa5f79f36afbfd777fff4b967ff2feadfffabf7ff7f7fefdf7abe77f7df3bdb7beffbcfffdff7b3fd7b",
+            None,
+            "fff6f73bf7dff19ffb7a777fa33dffbfd7efffefffeebaf8fdf78fef77baebffffea7dffcff9aff9ff6fbcb7f1d2f1dfffdfdfbdf7fffdd7f3e9ff7b77fffffb",
           ),
           comp_cell(
-            "TODO", "76ff3bdfaff6ef3b3fffcc7bfe7cbfdf9dfebfbf6e25ff5efffb7679dfffb5dfffdffdbf3e7b7fffdfff6efeffbdbffeffefaffbfbfdffdffdd72fe7dbfeefff",
+            None,
+            "fdffdfffdf9de1fefff7faffffffa7bdfffd7deaff7effefdf4ef3fef7fdefe7f7deffe42ffbadfeed3fb79ffefefceffff5ffeeeefdfebbfff6efcdffbebbdf",
           ),
           comp_cell(
-            "TODO", "ff9e575bf7ffbbf77f3df9f5dff7f3fff7f97fed7db7ffb9aff7ec7fdcffe69fffff7ffd8dbf5fffb7e9fffbfedf6fde7ffb797ddfffbfbbf3ecff7be67bfbfb",
+            None,
+            "bfb67fbcef6edf7ffffefd3c2fb779fffbe7febfefeebfbbdf783b7ffdef3f7fff76fffedaaf59ef7f7dffefbcfffb5f777cfdffeef276f77dfdbfda7bd7bddb",
           ),
           comp_cell(
-            "TODO", "ffbfffeefcdfff747ff75f3bbff9f0b9ffdfffffbfb76f76ffb57fd7dbbff2ffdff5fdff7efcddff6dadefbfddfb6fd7dff7ffef3befff5b6f5feffffbd7bbcf",
+            None,
+            "afaed7ebf7ffcffffffdbbff7ab7a7db7fbfefddffbeeefffdbffd7fff31fff76bfff7efbdf6e3adbcf72ffffbffdf7ff7affffefeb377db9ffcfff7deeddded",
           ),
           comp_cell(
-            "TODO", "b3bfbf75bffeff7deb76f3fa36bfb7fdff9dfbfbbffffdef7fff65feff77efffcef9ebdfffddfbf376ffbfcdfff5ffe7fff55bffd73f2ffebffdfebffbdbb9fd",
+            None,
+            "3bffdeb7bfbb5b7dbcffffaf5fffd7f7ebf6ec7ffdaebf6afbffc7cbcdd5fcfbef9eb75dfbefee6ffabeeef5db77ef56b7f6deebffdfbb71bf776df9fb7d7737",
           ),
           comp_cell(
-            "TODO", "fe5bffdffe1fdffbebfbffbbf74bcf6ddbd79ffffd7fe9ef716ffffef3dfebff6bfde7ffb7bffff7fd4fe3ba5fb7f3fbffafdeff7eeffe4dfafdf756ff7fad9f",
+            None,
+            "3d67ffdcdfffff7ef7efffffcfc6fafedffd9affcfbd61be7e7b6fffbefefbef5cffddfbb7f3ffdbeeb6fee7b5c73f6ff9ff7eebfdf7ffefbfdbfe5bdfeeff37",
           ),
           comp_cell(
-            "TODO", "ffd6ffdf57fdadffffffddfbfd77fbcedefffad7fd3ef9bcffffbcdf6fffffffff56cdf9ff7bfbdedfcb37bde3ff7f6f3df57fd76b7ee7b7ffbf7ffbef7e17bd",
+            None,
+            "7ff7f6a4fede8f36ff77fff7fab7d33bff7fcbff7ffb7fafbbd570ff8bf7fbbfe77ffff6f3bbfdbfd8fff7a7affc4ff79f7b3debcfffda7be3fbf4dfeceefffd",
           ),
           comp_cell(
-            "TODO", "b9f6ffff3becfddebfffdfedfb16dff9dbb77aebbfafefff7ff7ffdfffdfbfbfefcff277f7cfffbf77ff67ff1eeffcfdbff7fbbdff9ff7f5f76b6feafebeef7f",
+            None,
+            "74ff6fdfefeffbb1cfdf66bfffbcfeff7bebfff7ff9fab7737f8ebdff2faf77fdf7b95fcb7bef9efdbd76faef7b7ed6bfeffbb9efbdfff6fd9fbffe1bf66f5f7",
           ),
           comp_cell(
-            "TODO", "f77df7bf7dd77feffb7ecdbbebfef7ffe7fbf73f72fddbddfeeff3faff5bfffffba76ef6bbddf7fbfff477f3dbeefe7dfffef42ff6fcffdbffbe7eefb7bbff7d",
+            None,
+            "adeeffd6fde7bf1bbfc7dcbeb9afedefffdcfb5fee1b9bfdbffffeff9fbef79bbfbf5bfbfffabdbfffefdf67ff3fff1fcdbf7ff7e4beffd9fb47ffbff73c1ffb",
           ),
           comp_cell(
-            "TODO", "dffdff7bbbeffef5f7e7eb6dfbc7eeffdf6effff9f71fff9edeeeffdf3ff7fbfff2fdfbcef77f7ffffd7fef3f9f7ffffffbffff6dfbfffbfdffbfff7eb7fffe2",
+            None,
+            "fe5ff97fffeffefe7fefffff67bfbedfff3bdd77ee19f7bf5fadfff9cfffdcee3fec4bfffdd3ffdaefded3fbcbafffef36b7fbdfeb7feff7afef3ef5d9bbb7df",
           ),
           comp_cell(
-            "TODO", "37fff7ff1fff7dff7dfdffbafbde7dfffbfb7ff5ddfff9f6d7fdd3fffff7b6cdf7fbf5d9d6ffbfbf1ffdffdfffff5f4bdfafffaaffaedfff9fdbebfffff6fdef",
+            None,
+            "ef7dffcf3efaeb796dffffffff9ee7df39f5feefa777fbfbe7ddf7edebefd77fb73fffdfbdeffbffeff9ffff9bb56ff5f7fb7ffdfbe4fbfa8fefef7feecf3dd7",
           ),
           comp_cell(
-            "TODO", "7ffdf6f5fffbef7fadff57bfbfbfffffef9b6e6dfd7fe97effdd7f6e5fbf7bf9bcbbf3fcfb5fffbfed95febd7e5eded7dfff7fbbdfe3f9bdbdc74fef76ffef7b",
+            None,
+            "ffddd6cff3ffeb0e73fffff5fedfdefcd7dfff9d55fad4ff3b7ee41ececf7b7fb67fed7b6db7ff7f9f7fffeff7cff0ff3bf6df7fffcea5fff67f97ffff6ff775",
           ),
           comp_cell(
-            "TODO", "6f7fe7ddf7fd7fafffef7f7faefedf5fdfeeffdbf3ffffbf97dfbfa7bfdffefecf7efbafb7efbfeefff5dfddf2b32ddaddffb7ffdf7f56f5ff67ac9ffffbf7ff",
+            None,
+            "fdffd7ffd77fff7fffbe6ef7f7ffdfbbf7ebdef7dfdefb6ffabf1fb7dfbff5ff536ffefdfbf5ecee9f7fbd1ecefebfffefeb7b5ffff395efff5ffdebff9effdb",
           ),
           comp_cell(
-            "TODO", "dfb97fdf7febdffff77ac7f3ed7ebf7d5dfedff4bffdfffbf7ffeffebf5df7eff7f6fff5bfffbb7fbfb99feffdfdfff7fb75ddfedffebfb7ffd7e38fffefb2b7",
+            None,
+            "bfff695d4f7f7ffbfe7bd565e8bffff7fed537fddbbf3f95be757f43aefb7aaeeb65ffefef77f9fbe5baf9ff5faffe1b7bfdbf7fb9dbb157eddf677faffffedf",
           ),
           comp_cell(
-            "TODO", "7ff3fffcddbef5b7bee594ffd6ff778a5fbdfbf3bff7bfeffbe9bcbfe7dbf22dcaffcef77ae78fdffff3fd7dffd9fdbfffffffbd777fe7ffbffdbeefff7f7cf7",
+            None,
+            "fff573fff3e7b78e6ffeff7afdeef5fff7fef77fb7effbf7b777ffb7fffbdbfedefeff7fffbb3ebfffde7df7edbdffb6f7b77fd5fad6f3ab3cffdfff3ff9bfff",
           ),
           comp_cell(
-            "TODO", "f4f57dddfeedbe7bdffeaffbff7f3fff7f5bfd73ff5fff5ff753efffcdff7bf7d9fff3ffbbffb7edfffecffdfff717ffffffbfde7dfe7ffdf8663dfbbfda9d7f",
+            None,
+            "78f9ebbf7edff79cfffff77f7fff5ffaffdefbfbffbfdffff62fdfbfbf9e3ff3f6d77ffaf9f75feef9f7f73beff751effffee9ffe4e9bfee6ff7fdfbff7f77ff",
           ),
           comp_cell(
-            "TODO", "fdef7cf77fb9fffedff77df7fdffb9fedf7fffe775fdc7df7fbcd5ff9d7dffff7ef8b7faebefdbfffd7fcfef5f67beeb7adff56efaeeb7d7bfbf9596f6dfebcf",
+            None,
+            "fefb7dfbeeff3cebb6f6fed7ff7d69e7fbff9ffbf6a7dcbe6f77fefdeebfb5ff76ffd9efcf7ed7d7fcfbf632fb7fa7d6fff5e3ebe4effff7ddffbbdfff3fafdf",
           ),
           comp_cell(
-            "TODO", "ff93febaff7cfdf795d9fdecfbffffffff5fffbdf7fb7fffeed7bffeb77ffeef7ffc96d77fae5dfff7bff7ebf6dafffffeef768f75bf6cd9e61bb7e5fffdeff7",
+            None,
+            "efddfcf6fa1febf6b6dfdfffff78fdff6bdfffbb933f7fe7f77ae7fdf3ffee7f7777ff775f4ed1dfffc9ecdc5ffdff5dfff5ffbd9fff7bfddfdff4ef7bdd7fef",
           ),
           comp_cell(
-            "TODO", "df3ffefdfbfddeedfffbff7efffe3fbf5feaf1f7bfbbbdfddf7effaef6b5fffb3df33ffe6ffd2dfb54ef97bbfff7fffdfdfbbefdfffde77efffab3fdfed9eb7f",
+            None,
+            "fff6f2fcfdefbffedf7fb5dfffbfefd1ef7bffff9d7ff9bffe65cef7f77df7db81eefefffadff7d3eb95fff76e3f97fd35f7f7d61dffff5fdffffffd97be7f7b",
           ),
           comp_cell(
-            "TODO", "76af5f63ffbfdf53eff1f9fb779f0ec7eed3fbcf7f1f2ede3fff6d5f5fbf7ebffb7ff8ed5dfbffbfeafd9ffdbf7fadb7ff7eff9dff7fb9efcfcffffffffffffd",
+            None,
+            "7bfeffefffffbfdbeafffbd7dfdf7fdfff4f5dfefffbffb7fbffbeebc1ef359cb7b9fff5f3ffbffffb7f7c7ffeff9b6f9ef85ff9d1fff6def77ffdffffff7ff7",
           ),
           comp_cell(
-            "TODO", "bbfffb67f7f6fdff7e3fff3f9f82f7df7bfefbf77ddfd4d3fffffb8efeffbff5bff7ff6bf1cf3eef79fbfeffceddaefdfff5ff7fc9ebf7ffbbfefff5effffeff",
+            None,
+            "eedff57fffff59fe7cffdf7fe3f5fa77fffef7ff7feffbfdbfafffdff99fb6ffbffaefebff7b4ffefaeedf7fe7f7b3fbe77eff7fffffbbe3fb3fefcd7b8bb6ff",
+          ),
+          comp_cell(
+            None,
+            "bff633ff73fbeffffffdfb5ee777ffeffcffedb7ffbf7ef7ecfb1ab75f3d7097ffde67bfdf4adfbf75efdfdafffbfcffd6f7fdfdebe3f7fdffd3d777fffef9af",
+          ),
+          comp_cell(
+            None,
+            "efbfededfff6fdcf529f7eae7ddfdff7f5e77df57f5ef7fffde3f6bbddff77f7876fe3deff9b7ff5f97fefef6dffeb7feef7dcbdde3f5ffefbff6eeeffef6fff",
+          ),
+          comp_cell(
+            None,
+            "ebfff6ffff7ee7def3d9f63797fdfcdfbfa7f6ff7ff7f6eef1e7fd6eb7f6febf6f3eefdffb7f57decdfff75f7ef9fdcfc7ecbfebfbf5effbfcfefbbbdbebdb7d",
+          ),
+          comp_cell(
+            None,
+            "bd6e7f7ff7fbfbfdfefe7ffedef7edfdf37fbf7f7f5fefcaf3ff7f6fcf763fbfffffffbbfffcfeef77f5becef6f77f9feffdf735f5f1f7ebfdfdbbffafdedfbf",
+          ),
+          comp_cell(
+            None,
+            "effbcfdb5dbcfd539edf527ff97fefaee9ffebcffefbfdfffdfe8bfaafcfef7fe7fffb7c5dbfbefdfbfff5f1bdffefbedfcf1fc8b33efddffffbf775f77fef7f",
+          ),
+          comp_cell(
+            None,
+            "eb497debf72faa9eaffaafe3e6fffdefe7f77fecfffdff7bebdbfdf6beddf59fff9bdbbbf5e7fffef7cff6cdcfffcfffce3b7f96f9dffefaac37ffffffe3cbdf",
+          ),
+          comp_cell(
+            None,
+            "f6befdfdbbf657fff27efbfefbbf6feddcf97f5431cff6fffdeffdfffebf7abef2a4fbbe99ffbf9ef9fcaf7fdfbf7ffffaeffeeefddbbe2ffefb1fffb7f4bbff",
+          ),
+          comp_cell(
+            None,
+            "feffef79ffedffdeff787be7bb1fffffffeed67df7fffdbfef5ff7bd7affbd7efffbfffffa7f7dfcb5fefbfc7e7ffff7ff67f7fffdfbcfbfffddf7d3df2ff777",
+          ),
+          comp_cell(
+            None,
+            "dfeb7fd3cf3bf17b7ebbf8ffddbff7f7fe1fbefffffafd9fafffb7c77dafbf7e3fbfefecdffddfffc1ac734c67bf9ffbffffdf5fff69defedaf6fffffe7d9f7f",
+          ),
+          comp_cell(
+            None,
+            "fefddfdfd7fecbb7e77feff77fff2ffefdff6e7e77fffdee97f3bfdf5b82dcfa7bf9ebe7afe9fdfe6f7e3efddeffef7ffff67bf3dfbf5ef739bf5bf5df6bef6f",
+          ),
+          comp_cell(
+            None,
+            "d6ff1fefb5f8fbdae3ffdfffeedfdfbedbb4ffbb7ff6fbfefefbfef3f97dffbffddff7cbd7fffefee9efb9bfbfffffe7dbbfb975ffefff7ebfebd7ff3ff5ff5f",
+          ),
+          comp_cell(
+            None,
+            "7cdffbff8ff7fb57f4f2bafbffb7f9dffee7cb7df77bb6f8dedd77fbffffff7fe78fb67fdfffbe3fddff5fffefffe5777fd7bfdefefb7cfefe7ff5e697ecdfef",
+          ),
+          comp_cell(
+            None,
+            "97bffffbfbd63fffed7d33fee5ffefffe3f77bbfd7447fafd7bbfdfff177ef5fd7fff3fff5ffff37eefeedddef75f7ffebdbfffef3fdb5df97eff2f9d9efdd6b",
+          ),
+          comp_cell(
+            None,
+            "bed9b66ffff8fed7c1fbd5ff5ffbffd2efcbdfeff3fdf7dec73fbf3edf6fff7b55edd717e7b73fd78f9dff9ecfffdf9ffb7eb7bfffbdd73fceffffdcfd77fdff",
+          ),
+          comp_cell(
+            None,
+            "eb6f77dfff07fcff7fedfe577fabff7ffefbdfebed15fdefffffddf7af7f17ffbfdbbffafdfffbb7bfffde3bdae97fbdceddc7bfbbf527ffb5ffb71bffff7fcd",
+          ),
+          comp_cell(
+            None,
+            "bf7edbf5ffbfffeff75fabffffbff76bf9dbbf72ddfaf1f79fd7fccffdfb4ae6ffefdedbfffff77ee3cfbd7f57dffffffedfeefbebe8abaff6dffad66ef7ffbf",
+          ),
+          comp_cell(
+            None,
+            "ff7fefe7fcffbbeba7ff7efbedf7edbfd9ecd5dbfffc69ff7f7ff76aff73daedf7ffbbdffed7b5bbfff9fbdd2f7fbcff47bf7fbdbfffa73fdfaedefffeffdfdf",
+          ),
+          comp_cell(
+            None,
+            "febddcfd63ddeebfedffbfff3f6fff3ba75ffefadb7ff5ef3eefdfef3ede3b4bfffbfffefdbffedffeeb8f7effeebbffffff7fffffffbfebfafffdbdf0fdfbb3",
+          ),
+          comp_cell(
+            None,
+            "ffffd7efdfebbdf674ffffdb7c7ffffffdee7f7fdfef6ebfdb3f7ffbf7f9ffcbeeff7f7663ef9fffff7f7ffeffffbedfffdebaddbff7ffdfbffff53c7ffbefef",
+          ),
+          comp_cell(
+            None,
+            "bfeffefef67ffff3fff7ec0fdbff5afbddffffbff9ddfcbcfef77ff8ef7f7defebff57ffeef7bbffdbfaff7efdfff777efeffdffffdeff9fffefffcddb78ce7f",
+          ),
+          comp_cell(
+            None,
+            "b99e6ef7fecd39edfbbff3f7fe7be9b75fe6ff3bff7fcfefffbffcff67e1fdef3f5e9f7eddcf6ebff7fa7e97b1cbedfbf1f6aff7bfefff21bed67e2ff77cdef7",
+          ),
+          comp_cell(
+            None,
+            "f7ffeefdf85b7b4f5effcfdbcdf7bbf6966efffeeffddffbdff7f6e6fe7d75ff2f73d73c9ffeffdaf7b7f7dfe7db8dff7ff77f77605ffb7ddcf7dbfffdd8f3f7",
+          ),
+          comp_cell(
+            None,
+            "fffffbd7ef7fffdf9e6feb7f6fefbff7fb7fb9ffdfdfe67ff3dff2dcf92fdbe7d53f9e7fdcdfdf77f9bf5e76ff7fff7eeffb7edffbbdfbf6e5cfff9ff9fedd78",
+          ),
+          comp_cell(
+            None,
+            "5fb2969b7170e7fe7f3bfbfeffbfbfbddf7fdde7c77fbe6ffbb77fbffefefd4ffbfef47fc1fdfdfb9bfeefeeffe7ff7ed7b7f9defff6ff9fbf77ffffdbf3d7ff",
+          ),
+          comp_cell(
+            None,
+            "ecefffbfb7ef77f7efffb9ffeeedbf9d577f27f7fe76e67efb6d93776f7feafcbf7c7be7eea67fdfdfffedfff97bfeaffefddefffef7febfbf3fc6dfbf7bd7ef",
+          ),
+          comp_cell(
+            None,
+            "5b7fff3a9177e7fffff9efdbe5fedfbeafe7de3bfe8ddbe7d3defdffdfffa7fbbdefdf7bedffbfeeb76fff37dbffffdfbeabf7fdff7e78fd75fa7ffbfb3effbf",
+          ),
+          comp_cell(
+            None,
+            "fef3effe3ffdffe54d789bfde7fffffdefbf3997bff7ffd3ffdbf98ed57b8f7eec53e6fdfff7fbf65fdfefccf7dffefffeffdffefebbfffef9dffffbc6fdffff",
+          ),
+          comp_cell(
+            None,
+            "fdfd7dffe7df7feb3ff9ffedfd79bcff4fb7b777fef9ddedf7f7ef1ff5feceef7fffa90fe7f77ff7fd3dfa6fdeffffbfbfdeede7bff6ab9fb5fffdfbffffee6f",
+          ),
+          comp_cell(
+            None,
+            "b76fefebfdeb755f3fb6ffcb9ff57fc9fdf77fbe673ffffbf7dfffffdbfff7f7fdfe6bf7eff5d7f56afbbbfbf7bed7ffc377ffdfdfefefffb536bf6fb7fefb7f",
+          ),
+          comp_cell(
+            None,
+            "7eeeb7dbfbcffffe7eafdfbfad5d3dfb3b37fe6ff39fdff7a7ddcffbdfc379d1f67f7ddfbfd7f17ffdf9b5f2eeffef3d3ffeff5fefd7fffff3fffddf75fff3bf",
+          ),
+          comp_cell(
+            None,
+            "fbfdb7fefedd7f7d6ff4fffffbffdfbfdfff5ffcf8b7dd37fd7ef6ddfffeffb7dfff65ffdb7ddf7ffffdfc7cf73fffdf7eb7fffd77defffeffb5dfe9befabfff",
+          ),
+          comp_cell(
+            None,
+            "7bf97f7b0bff7f7bf7ff7aefffef7da7bc77efbef9ffdbff6ffd71df7dfbffffebffb7ff589fbdbfebabf17f7bbddbffe3dfefdffff7fd7ef1dbe5eb75bffffb",
+          ),
+          comp_cell(
+            None,
+            "f7ffc5fbfae5ffd8de7ffefffeffffffffeaeffeffbddbcde3fdaffdbf3a7f7cdbfeeffbffcef5fffff7ffdcafcfe5beffffecfdffbffa7fdb77ffdefdb47bbc",
+          ),
+          comp_cell(
+            None,
+            "dffff4ee3defe785bfd7aeb7afb5fafdfe57c7faffdffab77dbffee7bdfaf97fff7dd19fffecbefbf65df7dbffe39efd1eefbdbb6effefff6d2b7a7a7e5ebbff",
+          ),
+          comp_cell(
+            None,
+            "fffefa6ba9effafcffeeb93edf7ff92f75955bbfbf9d7ffedb3fefd6bceee7dddffbcc7ddf3b73e7beafb6dbfebc5bdf6fcffc7678f66efffeff4ff5bbdfdfbb",
+          ),
+          comp_cell(
+            None,
+            "5f9fbf7ff7ebfbf5b37f9bff7fffdbbfffbfebe7b5ffbfdfede3fdf5ffdff26dff66bffe7ffe7bffdffeb77fee7aefffffffdffff7fbcff7ffbf7f77c963b6ff",
+          ),
+          comp_cell(
+            None,
+            "fff9fabfffedc7ffef7eebd7ff7f23fed4fd9f7fbff6feddfafbf7ef67e3ffbff6faefffdeffbe7bfff8dfbf53f7dfd1f3ebbbffefffdefffdbfdffffb7ec8ff",
+          ),
+          comp_cell(
+            None,
+            "dff7f57f3f799ef7df9eefffcfffd1ffeddffdfbfd7f6e7f9ee3fdfffd9f97efeddffbefffb7b7fdd5ffdfefff7d3acdefbfdfbd6df2ff57fdbf377fbbff9fed",
+          ),
+          comp_cell(
+            None,
+            "fbff77e5d3cef31fbf3f9a43ebf766f3f4ff3675dff7abb77f7ce9bdeeffee7feddfefff7fffff7fce1fdf3f789ff9bfffff9de7fdfed1dbfbfefffffefe7eff",
+          ),
+          comp_cell(
+            None,
+            "f879d9f5bbb0f13fc46ffffef7ed3fffefbbfddffbf57feb5b5fdfbff5afffa9f3affbffffffffdf7fffd7ffbffbfffefd7f5ec7fd29d3f3fd4ffbfff9b7a3fb",
+          ),
+          // new rules
+          comp_cell(
+            None,
+            "04594470b0ca4c8210ca000021100102830000140200830000228198000a101400000406c00001624080000804010a5460219e340001b09010300042200302b1",
+          ),
+          comp_cell(
+            None,
+            "3fffffff7b717aad7f6ebbef77fdfdd7fdeefad567af97ef3f75fddb7fff1d6fabfcbecff7977fff3fefd3d3e16f7bb797affff9bd37ed65f4b9fcfbfbbfdbaf",
+          ),
+          comp_cell(
+            None,
+            "5fff7d75eca67fff7bdff3a3fff7defe7fcdbf4fdeefdddcbf77ff67b2ffefdffc59fdfffbfeefcd9deaf7bf9dbfdf73bfcbbbf6fdec7a7dffe9fe7ffeffef2f",
+          ),
+          comp_cell(
+            None,
+            "6dfefbff5ebfbeffed979ffb7df6ffb91fb39b97d9d7ffdfd7fbdbadd7dbf2ffbffa9fafdcfdf9eff3f6d5ef9efa1f77dd7cb79fffb577afdfffff7ffffee7ff",
+          ),
+          comp_cell(
+            None,
+            "6fbfffffdaffeadffffffb57fffffecffbedbebfffdcf6eb5fffc9bfffef9ff9ff7dffcf95f9bfb5dfdf6ffeae67efdffffff5f7ffddbed9fddf3abfe77ebfdf",
+          ),
+          comp_cell(
+            None,
+            "7bf7b6f7f55f9eefefbfdefbff7ecb576fafd77f7f6dfffdfdaffffeeb37fd1f9cdbbe9fbb7ff579e7d73fefbf76dbf7eff5b7f5f37febffbfff789ebfffbfef",
+          ),
+          comp_cell(
+            None,
+            "7fff7f4fe3feffd6dff76fee1fefbebfcfebfdfdf9feffe3feff67df39deffaffff7bf6dd7ed7f31bfff7feff3dfffffde75b3fffffde37e7c77efddf7defbff",
+          ),
+          comp_cell(
+            None,
+            "7ffff777fbeffd7ef7f63deffbff25ffb9f7fde7f7fb1d77d5fccffcdfd2dbffffffde9fefffdf5f3bbbffcff1edfdeefebe3ebbbd9fff3fdfbfffafb3fd5d5f",
+          ),
+          comp_cell(
+            None,
+            "9df99dff6ef7f4f7fffffffbc1ffed5fff67f36feffefaeffff7ddabcfe7ffbefbf73ffbfef6dd7fffeffbef6ef5aafdafdf7f375e9bfffff9f3fbfcdfbfebff",
+          ),
+          comp_cell(
+            None,
+            "9ff7fd7563ffeeffae2797d7fffaff779eeffaadfe7ffff5aff7f7f7efdbffffff7ef7dfd5783f7b7ffffb2f7ff73e83ffffe7ffdff1fff7c9bb77bffffe7b7f",
+          ),
+          comp_cell(
+            None,
+            "bbf6ef6defabbfdfffbfcfbffd5fffffd78fff7effffd5df6fff767f3fffffc79bfdffcf7ee77fc7eff7b7fad3f9bdfdffc83eeffd7f9be7ffcff7ff7ffc7f3f",
+          ),
+          comp_cell(
+            None,
+            "bfb77ebefbb9fbbbb9fdf9dffd13f6bffa77ef377ee7f9f3fbffcf7dd3d9fddfde7fdf7bfeeaf72efffbeed9dbbfbffffbfdf5ffffdf7ffbf7f7e719fff7edcf",
+          ),
+          comp_cell(
+            None,
+            "bfffeefbbff7f3d77dbef17e7e3bd5fdff7bb5b37bf7edd5afbfc7dfffaf3f7bfd5fdfbfcffb6fffcf7fffcd5fff37ffffbfe7db7be9bdbf3f7ffd3ff9ee735d",
+          ),
+          comp_cell(
+            None,
+            "fdf7a7cff9dfbeff1f7f79f76eee5f6fdff1dffb7fbbcfcf6ffebaf67077afbbfafd7f7f3dffffd7dfbfbe5f749fefffdebbafffdff63fdb7fffdfdffffc5fb3",
+          ),
+          comp_cell(
+            None,
+            "fedfdf957dffef5ffff5dffffdff9eff9ff7b7fb5edbafffbfffd66df5f5fef73fadf67bff765bfdbf8f7feffcfff1ffefff5afff767bdff77dff7fd726aede7",
+          ),
+          comp_cell(
+            None,
+            "fefbfeffefdd5dffbcf7efceff6effcff65edfb3ffefffdff5fdffb77ffaaf8ffdfaf64bfffbffbfff5df7ffdfeefbdffdfffffbfdfbeffffff7fe7f7bfffbf8",
+          ),
+          comp_cell(
+            None,
+            "ffabffedd93fd7ff3febf7d7fdbadffeb8febfcfefebfde7ff3ffffaeffbd57e7a89b6fffff2fffff7f7ffc9febeebdd76bbdffdff7ff7ed7fe9ffffbfbfffef",
+          ),
+          comp_cell(
+            None,
+            "ffafb55e7bffee5ffb7bb357fdf7ff8bdff7a7fc9957fee7ecff7efdddefbff776baff2fdfdd7fffbfef7cbfff7fb5a177263f7fdb57ad39fffcfefffd6effff",
+          ),
+          comp_cell(
+            None,
+            "ffbdfddfed6dfffdf3f95ffde6efcf7bdffffcf7f9bfefdbf74bfbefff73ffc5fff6bffff7fdfb3fbe3b7ff3fffffefffbdf3f7fffeffbbcffaefdcb7caeff77",
+          ),
+          comp_cell(
+            None,
+            "fffffffbfed7ffffdfb7ffffef4ff6fdfefc7fbefee2d77defb77ef76efffeefef7d9fecef3ffef777cb2fbdf7f6ff7fe7ce7baddff7affff7ffdfa7aff358fa",
+          ),
+          comp_cell(
+            None,
+            "effdfaffe5bffbfaedf7ff3fdefdba5dc7e33ef7f7f8cf1dbffff7d1e9fefcdf9f5ffbffddd2bfaffeefdf7efffefed77fbddbfffbecbeffbbf87e3dea6f3dfb",
+          ),
+          comp_cell(
+            None,
+            "7dffff72ffdff7fbfeefffd7f5bfc37a7f5fef7f1dddfe7d6ff7bbb76ffff7f6bfffbef5c6f8ffe6fefddd91df9beffb5ffffeedfffbffe6b9dfaf7ff66fb5ff",
+          ),
+          comp_cell(
+            None,
+            "2df76bdfa7ffe7bffdf7bf7fffffb7fbffb7affdffffdfa5f79f36afbfd777fff4b967ff2feadfffabf7ff7f7fefdf7abe77f7df3bdb7beffbcfffdff7b3fd7b",
+          ),
+          comp_cell(
+            None,
+            "76ff3bdfaff6ef3b3fffcc7bfe7cbfdf9dfebfbf6e25ff5efffb7679dfffb5dfffdffdbf3e7b7fffdfff6efeffbdbffeffefaffbfbfdffdffdd72fe7dbfeefff",
+          ),
+          comp_cell(
+            None,
+            "ff9e575bf7ffbbf77f3df9f5dff7f3fff7f97fed7db7ffb9aff7ec7fdcffe69fffff7ffd8dbf5fffb7e9fffbfedf6fde7ffb797ddfffbfbbf3ecff7be67bfbfb",
+          ),
+          comp_cell(
+            None,
+            "ffbfffeefcdfff747ff75f3bbff9f0b9ffdfffffbfb76f76ffb57fd7dbbff2ffdff5fdff7efcddff6dadefbfddfb6fd7dff7ffef3befff5b6f5feffffbd7bbcf",
+          ),
+          comp_cell(
+            None,
+            "b3bfbf75bffeff7deb76f3fa36bfb7fdff9dfbfbbffffdef7fff65feff77efffcef9ebdfffddfbf376ffbfcdfff5ffe7fff55bffd73f2ffebffdfebffbdbb9fd",
+          ),
+          comp_cell(
+            None,
+            "fe5bffdffe1fdffbebfbffbbf74bcf6ddbd79ffffd7fe9ef716ffffef3dfebff6bfde7ffb7bffff7fd4fe3ba5fb7f3fbffafdeff7eeffe4dfafdf756ff7fad9f",
+          ),
+          comp_cell(
+            None,
+            "ffd6ffdf57fdadffffffddfbfd77fbcedefffad7fd3ef9bcffffbcdf6fffffffff56cdf9ff7bfbdedfcb37bde3ff7f6f3df57fd76b7ee7b7ffbf7ffbef7e17bd",
+          ),
+          comp_cell(
+            None,
+            "b9f6ffff3becfddebfffdfedfb16dff9dbb77aebbfafefff7ff7ffdfffdfbfbfefcff277f7cfffbf77ff67ff1eeffcfdbff7fbbdff9ff7f5f76b6feafebeef7f",
+          ),
+          comp_cell(
+            None,
+            "f77df7bf7dd77feffb7ecdbbebfef7ffe7fbf73f72fddbddfeeff3faff5bfffffba76ef6bbddf7fbfff477f3dbeefe7dfffef42ff6fcffdbffbe7eefb7bbff7d",
+          ),
+          comp_cell(
+            None,
+            "dffdff7bbbeffef5f7e7eb6dfbc7eeffdf6effff9f71fff9edeeeffdf3ff7fbfff2fdfbcef77f7ffffd7fef3f9f7ffffffbffff6dfbfffbfdffbfff7eb7fffe2",
+          ),
+          comp_cell(
+            None,
+            "37fff7ff1fff7dff7dfdffbafbde7dfffbfb7ff5ddfff9f6d7fdd3fffff7b6cdf7fbf5d9d6ffbfbf1ffdffdfffff5f4bdfafffaaffaedfff9fdbebfffff6fdef",
+          ),
+          comp_cell(
+            None,
+            "7ffdf6f5fffbef7fadff57bfbfbfffffef9b6e6dfd7fe97effdd7f6e5fbf7bf9bcbbf3fcfb5fffbfed95febd7e5eded7dfff7fbbdfe3f9bdbdc74fef76ffef7b",
+          ),
+          comp_cell(
+            None,
+            "6f7fe7ddf7fd7fafffef7f7faefedf5fdfeeffdbf3ffffbf97dfbfa7bfdffefecf7efbafb7efbfeefff5dfddf2b32ddaddffb7ffdf7f56f5ff67ac9ffffbf7ff",
+          ),
+          comp_cell(
+            None,
+            "dfb97fdf7febdffff77ac7f3ed7ebf7d5dfedff4bffdfffbf7ffeffebf5df7eff7f6fff5bfffbb7fbfb99feffdfdfff7fb75ddfedffebfb7ffd7e38fffefb2b7",
+          ),
+          comp_cell(
+            None,
+            "7ff3fffcddbef5b7bee594ffd6ff778a5fbdfbf3bff7bfeffbe9bcbfe7dbf22dcaffcef77ae78fdffff3fd7dffd9fdbfffffffbd777fe7ffbffdbeefff7f7cf7",
+          ),
+          comp_cell(
+            None,
+            "f4f57dddfeedbe7bdffeaffbff7f3fff7f5bfd73ff5fff5ff753efffcdff7bf7d9fff3ffbbffb7edfffecffdfff717ffffffbfde7dfe7ffdf8663dfbbfda9d7f",
+          ),
+          comp_cell(
+            None,
+            "fdef7cf77fb9fffedff77df7fdffb9fedf7fffe775fdc7df7fbcd5ff9d7dffff7ef8b7faebefdbfffd7fcfef5f67beeb7adff56efaeeb7d7bfbf9596f6dfebcf",
+          ),
+          comp_cell(
+            None,
+            "ff93febaff7cfdf795d9fdecfbffffffff5fffbdf7fb7fffeed7bffeb77ffeef7ffc96d77fae5dfff7bff7ebf6dafffffeef768f75bf6cd9e61bb7e5fffdeff7",
+          ),
+          comp_cell(
+            None,
+            "df3ffefdfbfddeedfffbff7efffe3fbf5feaf1f7bfbbbdfddf7effaef6b5fffb3df33ffe6ffd2dfb54ef97bbfff7fffdfdfbbefdfffde77efffab3fdfed9eb7f",
+          ),
+          comp_cell(
+            None,
+            "76af5f63ffbfdf53eff1f9fb779f0ec7eed3fbcf7f1f2ede3fff6d5f5fbf7ebffb7ff8ed5dfbffbfeafd9ffdbf7fadb7ff7eff9dff7fb9efcfcffffffffffffd",
+          ),
+          comp_cell(
+            None,
+            "bbfffb67f7f6fdff7e3fff3f9f82f7df7bfefbf77ddfd4d3fffffb8efeffbff5bff7ff6bf1cf3eef79fbfeffceddaefdfff5ff7fc9ebf7ffbbfefff5effffeff",
+          ),
+          comp_cell(
+            None,
+            "77ebeb6fefdfffefff5ad5fbff97f1c7f77eefffdf9fbbbf939dfd7e77dffdfb4ffdfbbec5efe75efffeabfbffff5f7b7fbb6fffb9bdbfbf7ffb3defbeebcdd7",
+          ),
+          comp_cell(
+            None,
+            "3fdefff7fdfefe8ffff7d777efef7f6ecf27fffdffefcfdf7fddfff57ff5ff7ff7f3f7fff7fedf6effffebffffbcefdf7bdffd3efb7df3f7ffffefcfcbdfcdef",
+          ),
+          comp_cell(
+            None,
+            "3ffdd5a3eefef7c77efff7f9ffbf5d5fff52bffbffbedff6f7f7fdfffcbff79ffbfbf1abfbaf7b5cf4bbafbbfa7fff5effffb7fffffff7fff4aeffbfffff9b7b",
+          ),
+          comp_cell(
+            None,
+            "cf7df5f9fdbcebf7ffdeffe7dffec7f6fa37bffffefdff5fde3e7ebffefbb6ff7fffbf72b5fff46a51e3bfffbefecebbf61ffefdffebef7fffeefffffa9b7bfd",
+          ),
+          comp_cell(
+            None,
+            "7d4ff9df5fff63eadc7ddff7f7ff5ed74e6ff67f8ff9dddfcf8f47ff7fd7f3f97edfee79bdff7f7dbfdfff7fbfeffdffffdf9f77ffcbd7f3b5ecff98fafdfdff",
+          ),
+          comp_cell(
+            None,
+            "7ff3fbfeffdfbdbfffffdab95d3cfebbe7ffddd7fff77bfe7ff7d7effe6a77fef777ffbfcffffeefbc3ffdb7ef7f5ffffedffefdfef77fdfef76fb571ade7fff",
+          ),
+          comp_cell(
+            None,
+            "7fcffbb77edf7ef3dfaff95bddbfff7cfbcecbfadf7fde5bba5d57ce777f7fb7fffffd67ffffe49e66deefbdfe77f7ff6efff53ff3adbffff8dbfffcbfdbffff",
+          ),
+          comp_cell(
+            None,
+            "d8dcffdfaf5f7ff7bfffd1fffe7f75fbbfff974dcaeffd373bf3bdffffb9777b4bdefedeefb7fd63efffefebeffb7f5eff3af5dffefeff7dfdf66e755ffff9ed",
+          ),
+          comp_cell(
+            None,
+            "ff4f57ffb7ff43ff6fe7dffabfe7fdfff7fbffbe73f2e33dffefadeeffffd5ffebffda6feb7eaafffdbffbffdebef9bf3b3ffeffb7f3fdfff5977fe597fbcac7",
+          ),
+          comp_cell(
+            None,
+            "fbcedb37f7b3e9fff7fff7cfedfffdbfcbd9ff8bf73ff7fbfaf2fdeffffbfafee6b7ff1ffffeffffede7f9b7d7ff9d5ffffffffbf5ba7fb3a943fb75fffcbfaf",
+          ),
+          comp_cell(
+            None,
+            "7ffffe7dfff3df7ff99efd9eed3fddfb3feffd5fff7dfffdf31ffbd7fedfcfb7baf7abfebc5fbef5fffcefbfbfe6fff6e76f9f5fa2feff6ffbfe77fbeb9cfffb",
+          ),
+          comp_cell(
+            None,
+            "67fe7e7affbaf9fde2a7ffffbfdfd1f77fdbbbff3efbebeffffdfebdff9ff565fdffdef5ff776efefffdfefefec7ffdfeefddb1dffbdfffb9faf7fd6de9ffdff",
+          ),
+          comp_cell(
+            None,
+            "e7fc2b37fbdfd77ffff7f6bdfbfd92f1fafe77fdefef6fbfff6feffefffffefffb5daffdcb7d76abfd6ef6ffffbfffffbeffcefcdfb7bcf7f3eedb0ff9e7fdbb",
+          ),
+          comp_cell(
+            None,
+            "fff3bee9ff76edfd7fffdff3eefddfafeeffffda71efffaefffbdff7d7e9fffbb5f7ffeffe6ffdadb779feefdff7fffb9b7bfaf7efdfddf5dbefdbf3fbb6d3ef",
+          ),
+          comp_cell(
+            None,
+            "fafa4feb7b3debff7bf7bfefebfcf7fffffff9ee6fe4f7bfddfbffff7dfdd9dfffb8fff7f77ffbd55abfff5ffb3def7fdfe7fffef77f7f377fffffbf6cbbfefd",
+          ),
+          comp_cell(
+            None,
+            "cde1f7bddf7ff5ffbff3fffef8ff77fbfdff77efbedff6f76fd9ffffdbff77eee7557bfef76fd7fbffed11bd7eec5fbfff15ba3ffb7dbbf7fdfe9fdb7f96edff",
+          ),
+          comp_cell(
+            None,
+            "6fffd57ff6eff7feff7bf90df4bfff32bedf9b7ffbdf73d3fffbabfeffeffe87fff7fee3ffaddf7ff5ffdfffb67f7ef6effdff7fdeff2ed7fecbfdff637b7ed7",
+          ),
+          comp_cell(
+            None,
+            "f1b6fbbbf8f9f4fcf6f3f7f77bff77ffeebfafedcfd2f5b5bfff6ff8e5dfff6dffdefdbcfdff7ff77fa9f3eeefbefdff9ff7fdf9fffd7bfddffdb767baef7177",
+          ),
+          comp_cell(
+            None,
+            "c9ff5edfee7fdf4f7abbfafdb3ffff7caeffd1cf79def5db77bff793f75bb79ffcffefdfd6bf4dff7ffbd6eff1bcf7dbd95a6fcdfcb8fafff7f0e7fbf7dff3e7",
+          ),
+          comp_cell(
+            None,
+            "ffd3f6efffffde76effe7ffedfcbfcfbfdfbf78ffffffeeffbf77ff3fea5dffe9fefe76bffef34ff5effaffffdbfefbe7eebfbef9f33fffe5dbb77f577ffdfff",
+          ),
+          comp_cell(
+            None,
+            "5f48affa7f6ddeafff9fefefffbc7fd77fdef7fef29bfffff77bbfb77fff7eb97f6abdff7ffff7dfefd3dbdcbffb7f9f7a9faff6feffbffdbedffaf6f9fff5ff",
+          ),
+          comp_cell(
+            None,
+            "fbe7fffe7ffbfff7e3fdcfbf756edbfdefbe56bfffb73fb5f3ffeeffffef67fbf6df6efbcbbffdbffbf6afb6bfd7feffdefef7f4e7ffffffff97feffebfc5bfe",
+          ),
+          comp_cell(
+            None,
+            "ffbde17f4f6fbffeff6ffeebe7f7ffa6f9777ff3fc37fe9edff3fcddeafd2b65dff9dfeeffd7d9fffd79febdfffef9c76fbf8b7febd3f7f7f4ef7fbcf77d7fff",
+          ),
+          comp_cell(
+            None,
+            "fff7fffbbf8fbfcbdefbfdfffdd9fffaf77fff3bff7dffcff773b97eeffb77f8ffdf9bf0bffdffbfbf98f9fbcbd7b6a7ffe7fffdf7feeffffeffffcfbdb64dec",
+          ),
+          comp_cell(
+            None,
+            "ff9166fffea8f9ff9fcf9eebff7dfbf6efacfdfffcf05eb5aff7d3ff7d97f3b5ddaefaff7ddf7c567cfbfdbfddfdffb09f7eafed7b7bf3ffff7fff6fffffb57f",
           ),
         ],
       ),
@@ -160,48 +626,113 @@ fn comp_container(
 }
 
 fn comp_cell(
-  comment : String,
-  name : String
+  _comment : String?,
+  rule : String
 ) -> @respo_node.RespoNode[ActionOp] {
   @respo_node.div(
-    attrs=@respo_node.respo_attrs(class_name=@respo.ui_row),
-    style=@respo_node.RespoStyle::new(
-      margin_bottom=80.0,
-      width=Percent(80),
-      max_width=Px(1200),
-      margin=Auto,
-    ).insert("gap", "20px"),
+    class_name=@respo_node.str_spaced([@respo.ui_row, style_cell]),
     [
       @respo_node.div(
         style=@respo_node.RespoStyle::new(width=Percent(20)),
-        attrs=@respo_node.respo_attrs(class_name=@respo.ui_center),
+        class_name=@respo.ui_center,
         [
           @respo_node.span(
-            attrs=@respo_node.respo_attrs(inner_text=comment),
+            inner_text=rule,
+            class_name=@respo.ui_font_code,
+            style=@respo_node.RespoStyle::new(font_size=12, word_break=BreakAll),
             [],
           ),
-          @respo_node.create_element(
-            "a",
-            attrs=@respo_node.respo_attrs(
-              inner_text=name,
-              class_name=@respo.ui_font_code,
-              href="https://webgpu.art/fungi/?rule=\{name}",
-            )..set("target", "_blank"),
-            style=@respo_node.RespoStyle::new().insert(
-              "word-break", "break-all",
-            ),
-            [],
+          @respo_node.div(
+            class_name=@respo.ui_row,
+            style=@respo_node.RespoStyle::new(margin_top=Px(10), gap=Px(10)),
+            [
+              @respo_node.a(
+                inner_text="Open",
+                class_name=@respo.ui_font_code,
+                href="https://webgpu.art/fungi/?rule=\{rule}",
+                target=Blank,
+                style=@respo_node.RespoStyle::new(word_break=BreakAll),
+              ),
+              @respo_node.a(
+                inner_text="Edit",
+                class_name=@respo.ui_font_code,
+                href="https://r.tiye.me/Memkits/life-patterns/?rule=\{rule}",
+                target=Blank,
+                style=@respo_node.RespoStyle::new(word_break=BreakAll),
+              ),
+            ],
           ),
         ],
       ),
-      @respo_node.create_element(
-        "iframe",
-        attrs=@respo_node.respo_attrs(width="100%", height="400px")
-          ..set("src", "https://webgpu.art/fungi/?rule=\{name}")
-          ..set("frameBorder", "0"),
-        style=@respo_node.RespoStyle::new(border_width=0.0),
-        [@respo_node.span(attrs=@respo_node.respo_attrs(inner_text=name), [])],
+      @respo_node.iframe(
+        src="https://webgpu.art/fungi/?rule=\{rule}\{get_params_str()}",
+        loading=Lazy,
+        attrs=@respo_node.respo_attrs(width="100%", height="400px")..set(
+          "frameBorder", "0",
+        ),
+        style=@respo_node.RespoStyle::new(border_width=Px(0)),
       ),
     ],
   )
+}
+
+let intro : String =
+  #|"Fungi" is a variant of cellular automata system. It generates random rules by search among 2^(2^9) choices.
+  #|Each rule is a 512-bit binary string, represented with hex string of 128 characters.
+  #|Click on the 'Open' link to view the rule in larger screen.
+  #|Click on 'Edit' to open rule editor.
+  #|This page requires WebGPU compute shader support. Tested on Chrome browser.
+
+fn comp_intro() -> @respo_node.RespoNode[ActionOp] {
+  @respo_node.div(
+    style=@respo_node.RespoStyle::new(
+      margin_bottom=Px(80),
+      width=Px(800),
+      margin=Auto,
+      line_height=Em(1.6),
+    ).insert("gap", "20px"),
+    [@respo_node.span(inner_text=intro, [])],
+  )
+}
+
+let style_cell : String = @respo_node.declare_static_style(
+  [
+    (
+      "&",
+      @respo_node.RespoStyle::new(
+        margin_bottom=Px(80),
+        width=Percent(80),
+        max_width=Px(1200),
+        margin=Auto,
+      ).insert("gap", "20px"),
+    ),
+  ],
+)
+
+// defaults to &grid=2&slow=10
+fn get_params_str() -> String {
+  let window = @dom_ffi.window()
+  let params = @dom_ffi.get_url_search_params(
+    window.get_location().get_search(),
+  )
+  let grid_param = if params.has("grid") {
+    Some(params.get("grid"))
+  } else {
+    None
+  }
+  let slow_param = if params.has("slow") {
+    Some(params.get("slow"))
+  } else {
+    None
+  }
+  let mut s = ""
+  match grid_param {
+    Some(s1) => s = s + "&grid=" + s1
+    None => s = s + "&grid=2"
+  }
+  match slow_param {
+    Some(s1) => s = s + "&slow=" + s1
+    None => s = s + "&slow=10"
+  }
+  s
 }
