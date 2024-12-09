@@ -1,24 +1,30 @@
+///|
 let app_store_key : String = "mbt-workflow"
 
+///|
 struct App {
   store : Ref[Store]
   mount_target : @dom_ffi.Node
 }
 
+///|
 fn App::get_store(self : App) -> Ref[Store] {
   self.store
 }
 
+///|
 fn App::get_mount_target(self : App) -> @dom_ffi.Node {
   self.mount_target
 }
 
+///|
 fn App::dispatch(self : App, op : ActionOp) -> Unit {
   // TODO intent
   @dom_ffi.log("Action: " + op.to_string())
   self.store.val.update(op)
 }
 
+///|
 fn App::view(
   self : App
 ) -> @respo_node.RespoNode[ActionOp]!@respo_node.RespoCommonError {
@@ -28,17 +34,19 @@ fn App::view(
   let store = self.store.val
   // @dom_ffi.log("Store to render: " + store.to_json().stringify(indent=2))
   let states = store.get_states()
-  @respo_node.div(
-    attrs=@respo_node.respo_attrs(class_name=@respo.ui_global),
-    style=@respo_node.RespoStyle::new(padding=Px(12)),
+  div(
+    attrs=respo_attrs(class_name=@respo.ui_global),
+    style=respo_style(padding=Px(12)),
     [comp_container(states.pick("container"))],
   )
 }
 
+///|
 fn pick_storage_key() -> String {
   app_store_key
 }
 
+///|
 fn try_load_storage(self : App) -> Unit!@respo_node.RespoCommonError {
   let window = @dom_ffi.window()
   let storage = window.local_storage()
@@ -52,8 +60,7 @@ fn try_load_storage(self : App) -> Unit!@respo_node.RespoCommonError {
   }
 }
 
-/// backup store to local storage before unload
-
+///| backup store to local storage before unload
 fn backup_model_beforeunload(self : App) -> Unit {
   let window = @dom_ffi.window()
   let storage = window.local_storage()
@@ -67,6 +74,7 @@ fn backup_model_beforeunload(self : App) -> Unit {
   window.set_onbeforeunload(beforeunload)
 }
 
+///|
 fn main {
   let app : App = {
     mount_target: @dom_ffi.window()
@@ -85,6 +93,7 @@ fn main {
   app.render_loop()
 }
 
+///|
 fn App::render_loop(self : App) -> Unit {
   let mount_target = self.mount_target
   // let store_to_action = global_store.to_owned()
@@ -105,7 +114,7 @@ fn App::render_loop(self : App) -> Unit {
   }
   let ret = @respo.render_node?(
     mount_target,
-    fn() { self.store },
+    self.store,
     renderer,
     dispatch_action,
     Some(100),

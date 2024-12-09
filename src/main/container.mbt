@@ -1,13 +1,15 @@
+///|
 struct ContainerState {} derive(Default, ToJson, @json.FromJson)
 
+///|
 fn comp_container(
   _states : @respo.RespoStatesTree
 ) -> @respo_node.RespoNode[ActionOp] {
-  @respo_node.div(
+  div(
     [
-      @respo_node.div(
+      div(
         class_name=@respo.ui_font_fancy,
-        style=@respo_node.RespoStyle::new(
+        style=@respo_node.respo_style(
           font_size=32,
           text_align=Center,
           margin_top=Px(40),
@@ -16,7 +18,7 @@ fn comp_container(
         [@respo_node.span(inner_text="Collection of some Fungi rules", [])],
       ),
       comp_intro(),
-      @respo_node.div(
+      div(
         [
           comp_cell(
             None,
@@ -625,57 +627,59 @@ fn comp_container(
   )
 }
 
+///|
 fn comp_cell(
   _comment : String?,
   rule : String
 ) -> @respo_node.RespoNode[ActionOp] {
-  @respo_node.div(
-    class_name=@respo_node.str_spaced([@respo.ui_row, style_cell]),
+  div(
+    class_name=str_spaced([@respo.ui_row, style_cell]),
     [
-      @respo_node.div(
-        style=@respo_node.RespoStyle::new(width=Percent(20)),
+      div(
+        style=@respo_node.respo_style(width=Percent(20)),
         class_name=@respo.ui_center,
         [
           @respo_node.span(
             inner_text=rule,
             class_name=@respo.ui_font_code,
-            style=@respo_node.RespoStyle::new(font_size=12, word_break=BreakAll),
+            style=@respo_node.respo_style(font_size=12, word_break=BreakAll),
             [],
           ),
-          @respo_node.div(
+          div(
             class_name=@respo.ui_row,
-            style=@respo_node.RespoStyle::new(margin_top=Px(10), gap=Px(10)),
+            style=@respo_node.respo_style(margin_top=Px(10), gap=Px(10)),
             [
               @respo_node.a(
                 inner_text="Open",
                 class_name=@respo.ui_font_code,
                 href="https://webgpu.art/fungi/?rule=\{rule}",
                 target=Blank,
-                style=@respo_node.RespoStyle::new(word_break=BreakAll),
+                style=@respo_node.respo_style(word_break=BreakAll),
               ),
               @respo_node.a(
                 inner_text="Edit",
                 class_name=@respo.ui_font_code,
                 href="https://r.tiye.me/Memkits/life-patterns/?rule=\{rule}",
                 target=Blank,
-                style=@respo_node.RespoStyle::new(word_break=BreakAll),
+                style=@respo_node.respo_style(word_break=BreakAll),
               ),
             ],
           ),
         ],
       ),
-      @respo_node.iframe(
+      iframe(
         src="https://webgpu.art/fungi/?rule=\{rule}\{get_params_str()}",
         loading=Lazy,
         attrs=@respo_node.respo_attrs(width="100%", height="400px")..set(
           "frameBorder", "0",
         ),
-        style=@respo_node.RespoStyle::new(border_width=Px(0)),
+        style=@respo_node.respo_style(border_width=Px(0)),
       ),
     ],
   )
 }
 
+///|
 let intro : String =
   #|"Fungi" is a variant of cellular automata system. It generates random rules by search among 2^(2^9) choices.
   #|Each rule is a 512-bit binary string, represented with hex string of 128 characters.
@@ -683,38 +687,41 @@ let intro : String =
   #|Click on 'Edit' to open rule editor.
   #|This page requires WebGPU compute shader support. Tested on Chrome browser.
 
+///|
 fn comp_intro() -> @respo_node.RespoNode[ActionOp] {
-  @respo_node.div(
-    style=@respo_node.RespoStyle::new(
+  div(
+    style=@respo_node.respo_style(
       margin_bottom=Px(80),
       width=Px(800),
       margin=Auto,
       line_height=Em(1.6),
-    ).insert("gap", "20px"),
+      gap=Px(20),
+    ),
     [@respo_node.span(inner_text=intro, [])],
   )
 }
 
+///|
 let style_cell : String = @respo_node.declare_static_style(
   [
     (
       "&",
-      @respo_node.RespoStyle::new(
+      @respo_node.respo_style(
         margin_bottom=Px(80),
         width=Percent(80),
         max_width=Px(1200),
         margin=Auto,
-      ).insert("gap", "20px"),
+        gap=Px(20),
+      ),
     ),
   ],
 )
 
 // defaults to &grid=2&slow=10
+///|
 fn get_params_str() -> String {
   let window = @dom_ffi.window()
-  let params = @dom_ffi.get_url_search_params(
-    window.get_location().get_search(),
-  )
+  let params = @dom_ffi.new_url_search_params(window.location().search())
   let grid_param = if params.has("grid") {
     Some(params.get("grid"))
   } else {
