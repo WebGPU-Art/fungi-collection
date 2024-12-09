@@ -1,9 +1,9 @@
-## Boilerplate project for Respo
+# Fungi Collection
 
-```bash
-yarn build
-```
+### Workflow
 
-## License
+https://github.com/Respo/respo-moonbit-workflow
+
+### License
 
 Apache License 2.0
