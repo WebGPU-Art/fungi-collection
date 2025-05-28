@@ -1,4 +1,7 @@
 ///|
+fnalias @respo_node.(respo_attrs, respo_style)
+
+///|
 let app_store_key : String = "mbt-workflow"
 
 ///|
