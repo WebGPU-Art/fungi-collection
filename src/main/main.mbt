@@ -1,5 +1,8 @@
 ///|
-fnalias @respo_node.(respo_attrs, respo_style)
+using @respo_node {respo_attrs}
+
+///|
+using @css {respo_style}
 
 ///|
 let app_store_key : String = "mbt-workflow"
@@ -16,21 +19,9 @@ fn App::get_store(self : App) -> Ref[Store] {
 }
 
 ///|
-fn App::get_mount_target(self : App) -> @dom_ffi.Node {
-  self.mount_target
-}
-
-///|
-fn App::dispatch(self : App, op : ActionOp) -> Unit {
-  // TODO intent
-  @dom_ffi.log("Action: " + op.to_string())
-  self.store.val.update(op)
-}
-
-///|
 fn App::view(
-  self : App
-) -> @respo_node.RespoNode[ActionOp]!@respo_node.RespoCommonError {
+  self : App,
+) -> @respo_node.RespoNode[ActionOp] raise @respo_node.RespoCommonError {
   if false {
     raise @respo_node.RespoCommonError("TODO")
   }
@@ -50,20 +41,7 @@ fn pick_storage_key() -> String {
 }
 
 ///|
-fn try_load_storage(self : App) -> Unit!@respo_node.RespoCommonError {
-  let window = @dom_ffi.window()
-  let storage = window.local_storage()
-  let key = pick_storage_key()
-  match storage.get_item(key) {
-    Some(s) => {
-      let store = self.get_store()
-      store.val = try_from_string!(s)
-    }
-    None => raise @respo_node.RespoCommonError("No storage")
-  }
-}
-
-///| backup store to local storage before unload
+/// backup store to local storage before unload
 fn backup_model_beforeunload(self : App) -> Unit {
   let window = @dom_ffi.window()
   let storage = window.local_storage()
@@ -83,13 +61,9 @@ fn main {
     mount_target: @dom_ffi.window()
     .document()
     .query_selector(".app")
+    .unwrap()
     .reinterpret_as_node(),
-    store: Ref::new(Store::default()),
-  }
-  let ret = app.try_load_storage?()
-  match ret {
-    Ok(_) => ()
-    Err(e) => @dom_ffi.error_log(e.to_string())
+    store: Ref::new(@respo.try_load_storage(app_store_key)),
   }
   app.backup_model_beforeunload()
   @dom_ffi.log("store: " + app.store.val.to_json().stringify(indent=2))
@@ -101,7 +75,9 @@ fn App::render_loop(self : App) -> Unit {
   let mount_target = self.mount_target
   // let store_to_action = global_store.to_owned()
 
-  let dispatch_action = fn(op : ActionOp) -> Unit!@respo_node.RespoCommonError {
+  let dispatch_action = fn(
+    op : ActionOp,
+  ) -> Unit raise @respo_node.RespoCommonError {
     // @dom_ffi.log("Action: \{op.to_string()}")
     // @dom_ffi.log("Global store: \{global_store.val.to_json()}")
 
@@ -112,16 +88,16 @@ fn App::render_loop(self : App) -> Unit {
       _ => ()
     }
   }
-  let renderer = fn() -> @respo_node.RespoNode[_]!@respo_node.RespoCommonError {
-    self.view!()
+  let renderer = fn() -> @respo_node.RespoNode[_] raise @respo_node.RespoCommonError {
+    self.view()
   }
-  let ret = @respo.render_node?(
-    mount_target,
-    self.store,
-    renderer,
-    dispatch_action,
-    Some(100),
-  )
+  let ret = try? @respo.render_node(
+      mount_target,
+      self.store,
+      renderer,
+      dispatch_action,
+      Some(100),
+    )
   match ret {
     Ok(_) => ()
     Err(e) => @dom_ffi.error_log(e.to_string())
