@@ -1,8 +1,13 @@
 ///|
-fnalias @respo_node.(div, iframe, static_style, a, span, text_node)
-
-///|
-typealias @respo_node.RespoNode
+using @respo_node {
+  div,
+  iframe,
+  static_style,
+  a,
+  span,
+  text_node,
+  type RespoNode
+}
 
 ///|
 struct ContainerState {} derive(Default, ToJson, @json.FromJson)
