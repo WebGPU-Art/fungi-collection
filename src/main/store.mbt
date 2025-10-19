@@ -3,12 +3,7 @@ struct Store {
   counted : Int
   tasks : Array[Task]
   states : @respo.RespoStatesTree
-} derive(ToJson, @json.FromJson)
-
-///|
-impl Default for Store with default() -> Store {
-  { counted: 0, tasks: [], states: @respo.RespoStatesTree::default() }
-}
+} derive(ToJson, Default, @json.FromJson)
 
 ///|
 struct Task {
@@ -22,12 +17,7 @@ struct Task {
 enum ActionOp {
   Noop
   StatesChange(@respo.RespoUpdateState)
-}
-
-///|
-fn ActionOp::default() -> ActionOp {
-  Noop
-}
+} derive(Default)
 
 ///|
 impl @respo_node.RespoAction for ActionOp with build_states_action(cursor, a, j) {
@@ -43,12 +33,13 @@ impl @respo_node.RespoAction for ActionOp with build_states_action(cursor, a, j)
 }
 
 ///|
-fn ActionOp::to_string(self : ActionOp) -> String {
-  match self {
+pub impl Show for ActionOp with output(self : ActionOp, logger) {
+  let s = match self {
     Noop => "Noop"
     StatesChange(state) =>
-      "StatesChange(\{state.cursor}  \{state.backup.to_json()})"
+      "StatesChange(\{state.cursor} \{state.backup.to_json()})"
   }
+  logger.write_string(s)
 }
 
 ///|
