@@ -1,15 +1,20 @@
 ///|
-fnalias @respo_node.(div, iframe, static_style, a, span, text_node)
-
-///|
-typealias @respo_node.RespoNode
+using @respo_node {
+  div,
+  iframe,
+  static_style,
+  a,
+  span,
+  text_node,
+  type RespoNode
+}
 
 ///|
 struct ContainerState {} derive(Default, ToJson, @json.FromJson)
 
 ///|
 fn comp_container(
-  _states : @respo.RespoStatesTree
+  _states : @respo.RespoStatesTree,
 ) -> @respo_node.RespoNode[ActionOp] {
   div([
     div(
@@ -534,7 +539,7 @@ let intro : String =
 ///|
 fn comp_intro() -> @respo_node.RespoNode[ActionOp] {
   div(
-    style=@respo_node.respo_style(
+    style=@css.respo_style(
       margin_bottom=Px(80),
       width=Px(800),
       margin=Auto,
@@ -560,6 +565,7 @@ let style_cell : String = static_style([
 ])
 
 // defaults to &grid=2&slow=10
+
 ///|
 fn get_params_str() -> String {
   let window = @dom_ffi.window()
