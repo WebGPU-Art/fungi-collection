@@ -6,7 +6,7 @@ using @respo_node {
   a,
   span,
   text_node,
-  type RespoNode
+  type RespoNode,
 }
 
 ///|

@@ -42,7 +42,7 @@ fn pick_storage_key() -> String {
 
 ///|
 /// backup store to local storage before unload
-fn backup_model_beforeunload(self : App) -> Unit {
+fn App::backup_model_beforeunload(self : App) -> Unit {
   let window = @dom_ffi.window()
   let storage = window.local_storage()
   let p = pick_storage_key()
@@ -92,12 +92,12 @@ fn App::render_loop(self : App) -> Unit {
     self.view()
   }
   let ret = try? @respo.render_node(
-      mount_target,
-      self.store,
-      renderer,
-      dispatch_action,
-      Some(100),
-    )
+    mount_target,
+    self.store,
+    renderer,
+    dispatch_action,
+    Some(100),
+  )
   match ret {
     Ok(_) => ()
     Err(e) => @dom_ffi.error_log(e.to_string())

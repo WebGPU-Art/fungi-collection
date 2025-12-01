@@ -43,13 +43,13 @@ pub impl Show for ActionOp with output(self : ActionOp, logger) {
 }
 
 ///|
-fn get_states(self : Store) -> @respo.RespoStatesTree {
+fn Store::get_states(self : Store) -> @respo.RespoStatesTree {
   self.states
 }
 
 ///|
 /// TODO mutation might break memoization in the future
-fn update(self : Store, op : ActionOp) -> Unit {
+fn Store::update(self : Store, op : ActionOp) -> Unit {
   match op {
     StatesChange(states) => self.states.set_in_mut(states)
     _ => ()
