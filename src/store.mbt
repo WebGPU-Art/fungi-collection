@@ -2,8 +2,8 @@
 struct Store {
   counted : Int
   tasks : Array[Task]
-  states : @respo.RespoStatesTree
-} derive(ToJson, Default, @json.FromJson)
+  mut states : @respo.RespoStatesTree
+} derive(ToJson, Default, @json.FromJson, Eq)
 
 ///|
 struct Task {
@@ -51,7 +51,7 @@ fn Store::get_states(self : Store) -> @respo.RespoStatesTree {
 /// TODO mutation might break memoization in the future
 fn Store::update(self : Store, op : ActionOp) -> Unit {
   match op {
-    StatesChange(states) => self.states.set_in_mut(states)
+    StatesChange(states) => self.states = self.states.set_in(states)
     _ => ()
   }
 }
