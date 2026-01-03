@@ -19,9 +19,12 @@ fn App::get_store(self : App) -> Ref[Store] {
 }
 
 ///|
+enum GlobalEvent {}
+
+///|
 fn App::view(
   self : App,
-) -> @respo_node.RespoNode[ActionOp] raise @respo_node.RespoCommonError {
+) -> @respo_node.RespoNode[ActionOp, GlobalEvent] raise @respo_node.RespoCommonError {
   if false {
     raise @respo_node.RespoCommonError("TODO")
   }

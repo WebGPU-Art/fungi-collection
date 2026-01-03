@@ -15,7 +15,7 @@ struct ContainerState {} derive(Default, ToJson, @json.FromJson)
 ///|
 fn comp_container(
   _states : @respo.RespoStatesTree,
-) -> @respo_node.RespoNode[ActionOp] {
+) -> @respo_node.RespoNode[ActionOp, GlobalEvent] {
   div([
     div(
       class_name=@respo.ui_font_fancy,
@@ -485,7 +485,10 @@ fn comp_container(
 }
 
 ///|
-fn comp_cell(_comment? : String, rule : String) -> RespoNode[ActionOp] {
+fn comp_cell(
+  _comment? : String,
+  rule : String,
+) -> RespoNode[ActionOp, GlobalEvent] {
   div(class_list=[@respo.ui_row, style_cell], [
     div(style=respo_style(width=Percent(20)), class_name=@respo.ui_center, [
       span(
@@ -537,7 +540,7 @@ let intro : String =
   #|This page requires WebGPU compute shader support. Tested on Chrome browser.
 
 ///|
-fn comp_intro() -> @respo_node.RespoNode[ActionOp] {
+fn comp_intro() -> @respo_node.RespoNode[ActionOp, GlobalEvent] {
   div(
     style=@css.respo_style(
       margin_bottom=Px(80),

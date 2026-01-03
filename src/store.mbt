@@ -21,15 +21,7 @@ enum ActionOp {
 
 ///|
 impl @respo_node.RespoAction for ActionOp with build_states_action(cursor, a, j) {
-  StatesChange({
-    cursor,
-    data: if a is Some(a) {
-      Some(@dom_ffi.js_obscure_to_v(a))
-    } else {
-      None
-    },
-    backup: j,
-  })
+  StatesChange({ cursor, data: a.map(@dom_ffi.js_obscure_to_v), backup: j })
 }
 
 ///|
